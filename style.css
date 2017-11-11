@@ -1,0 +1,23 @@
+body {
+  background: CadetBlue;
+}
+
+h1 {
+  text-align: center;
+  margin: auto;
+}
+
+.container {
+  border: 1px solid darkgoldenrod;
+  width: 1000px;
+  height: 700px;
+  margin: 0 auto;
+  padding-top: 100px;
+}
+
+.gameBoard {
+  border: 1px solid darkgray;
+  width: 800px;
+  height: 650px;
+  margin: auto;
+}
