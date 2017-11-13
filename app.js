@@ -5,7 +5,16 @@ $(()=>{
 
 let columns = 0;
 let rows = 0;
-let createGameBoard = 0;
+
+
+const player1 = 0;
+const player2 = 0;
+const winner = 0;
+const message = 0;
+const createGameBoard = 0;
+const selectColumn = 0;
+const button = 0;
+
 
 // < ---------- create game board ---------->
 
@@ -63,6 +72,18 @@ $shape.attr("class", "circle");
 // $gameBoard.append($column5);
 // $gameBoard.append($column6);
 // $gameBoard.append($column7);
+
+
+// < ---------- functions ---------->
+
+// 1. start game
+// 2. seclect column
+// 3. Make game piece fall to bottom
+// 4. update board
+// 5. switch player
+// 6. determine winner
+// 7. restart game
+
 // < ---------- start game ---------->
 
 // < ---------- how to make game pieces fall to the bottom ---------->
