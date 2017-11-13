@@ -14,8 +14,6 @@ header, h1, h3 {
 }
 
 main {
-  font-family: 'Space Mono', monospace;
-  text-align: center;
   margin: auto;
   width: 100%;
   position: relative;
@@ -31,6 +29,11 @@ main {
   height: 50px;
   display: inline-block;
   margin: 0px 5px;
+}
+
+#gameBoard {
+  border: solid 2px black;
+  display: inline-block;
 }
 
 .circle {
