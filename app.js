@@ -9,40 +9,41 @@ let rows = 0;
 
 const player1 = 0;
 const player2 = 0;
-const winner = 0;
 const message = 0;
-const createGameBoard = 0;
-const selectColumn = 0;
+const startGame = 0;
+const gameBoard = 0;
+const columnSelector = 0;
 const button = 0;
+const winner = 0;
 
 
 // < ---------- create game board ---------->
 
-const $container = $("<div>").addClass("container");
-$("body").append($container);
+// const $container = $("<div>").addClass("container");
+// $("body").append($container);
 
-const createGameBoard = (column) => {
-    for (let i = 0; i < column; i++) {
-            console.log(i);
+for (let i = 0; i < gameBoard.rows.length; i++) {
+  console.log(i);
+}
 
-const $circle = $("<div>").addClass("circle");
-
-$($container).append($column);
-
-const addCircle = (event) => {
-
-const $shape = $(event.currentTarget);
-                //shape here is a placeholder. need something here to change it to a circle.
-$shape.attr("class", "circle");
-
-  };
+// const $circle = $("<div>").addClass("circle");
+//
+// $($container).append($column);
+//
+// const addCircle = (event) => {
+//
+// const $shape = $(event.currentTarget);
+//                 //shape here is a placeholder. need something here to change it to a circle.
+// $shape.attr("class", "circle");
+//
+//   };
 
 //event listeners
 
-  $(".circle").on("click", addCircle)
-};
-
-};
+//   $(".circle").on("click", addCircle)
+// };
+//
+// };
 
 });
 
