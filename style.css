@@ -13,16 +13,16 @@ header, h1, h3 {
   position: relative;
 }
 
-main {
+/*main {
   margin: auto;
   width: 100%;
   position: relative;
-}
+}*/
 
-#columnSelector {
+/*#columnSelector {
   padding: 0px 7px;
   display: block;
-}
+}*/
 
 .arrow {
   width: 80px;
@@ -31,9 +31,24 @@ main {
   margin: 0px 5px;
 }
 
-#gameBoard {
-  border: solid 2px black;
+.container {
+  border: solid 1px black;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.gameBoard {
+  border: solid 5px black;
   display: inline-block;
+  width: 700px;
+  height: 700px;
+  margin: auto;
+  /*background-color: black;*/
+  /*opacity: 0.1;*/
+  vertical-align: top;
+  border-radius: 40px;
+  text-align: center;
 }
 
 .circle {
@@ -50,7 +65,7 @@ main {
   width: 260px;
   margin: 5px 0px 0px 25px;
   display: inline-block;
-  position: absolute;
+  position: relative;
 }
 
 #instructions {

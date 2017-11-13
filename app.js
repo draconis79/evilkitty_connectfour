@@ -3,28 +3,36 @@ console.log("connect four");
 $(()=>{
 // < ---------- variables ---------->
 
-let columns = 0;
-let rows = 0;
-
-
-const player1 = 0;
-const player2 = 0;
-const message = 0;
-const startGame = 0;
-const gameBoard = 0;
-const columnSelector = 0;
-const button = 0;
-const winner = 0;
+// const player1 = 0;
+// const player2 = 0;
+// const message = 0;
+// const startGame = 0;
+// const button = 0;
+// const winner = 0;
 
 
 // < ---------- create game board ---------->
 
-// const $container = $("<div>").addClass("container");
-// $("body").append($container);
-
-for (let i = 0; i < gameBoard.rows.length; i++) {
-  console.log(i);
+const createBoard = () => {
+// create a column with 7 rows
+    const $gameBoard = $("<div>").addClass("gameBoard");
+    for (let i = 0; i < 7; i++) {
+// create 6 columns
+        const $columnSelector = $("<div>").addClass("columnSelector");
+        $columnSelector.attr("columnSelector" + (i));
+        for (let j = 0; j < 6; j++) {
+// create game slots
+            const $circle = $("<div>").addClass("circle");
+            $columnSelector.append($circle);
+        }
+        $gameBoard.append($columnSelector);
+    }
+    $(".container").append($gameBoard);
 }
+
+
+
+
 
 // const $circle = $("<div>").addClass("circle");
 //
@@ -45,7 +53,7 @@ for (let i = 0; i < gameBoard.rows.length; i++) {
 //
 // };
 
-});
+
 
 // < ---------- create rows ---------->
 
@@ -85,6 +93,15 @@ for (let i = 0; i < gameBoard.rows.length; i++) {
 // 6. determine winner
 // 7. restart game
 
+
+createBoard();
+
+
+
+
+
+
+});
 // < ---------- start game ---------->
 
 // < ---------- how to make game pieces fall to the bottom ---------->
