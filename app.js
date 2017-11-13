@@ -1,13 +1,41 @@
 console.log("connect four");
 
+$(()=>{
+// < ---------- variables ---------->
+
+let columns = 0;
+let rows = 0;
+let createGameBoard = 0;
+
 // < ---------- create game board ---------->
 
-const $gameBoard = $("div").addClass("gameBoard");
-$(".container").append($gameBoard);
+const $container = $("<div>").addClass("container");
+$("body").append($container);
 
+const createGameBoard = (column) => {
+    for (let i = 0; i < column; i++) {
+            console.log(i);
 
+const $circle = $("<div>").addClass("circle");
 
+$($container).append($column);
 
+const addCircle = (event) => {
+
+const $shape = $(event.currentTarget);
+                //shape here is a placeholder. need something here to change it to a circle.
+$shape.attr("class", "circle");
+
+  };
+
+//event listeners
+
+  $(".circle").on("click", addCircle)
+};
+
+};
+
+});
 
 // < ---------- create rows ---------->
 
@@ -19,22 +47,22 @@ $(".container").append($gameBoard);
 // < ---------- create columns ---------->
 
 
-const $column1 = $("<div>").addClass("column").attr("id", "column1");
-const $column2 = $("<div>").addClass("column").attr("id", "column2");
-const $column3 = $("<div>").addClass("column").attr("id", "column3");
-const $column4 = $("<div>").addClass("column").attr("id", "column4");
-const $column5 = $("<div>").addClass("column").attr("id", "column5");
-const $column6 = $("<div>").addClass("column").attr("id", "column6");
-const $column7 = $("<div>").addClass("column").attr("id", "column7");
+// const $column1 = $("<div>").addClass("column").attr("id", "column1");
+// const $column2 = $("<div>").addClass("column").attr("id", "column2");
+// const $column3 = $("<div>").addClass("column").attr("id", "column3");
+// const $column4 = $("<div>").addClass("column").attr("id", "column4");
+// const $column5 = $("<div>").addClass("column").attr("id", "column5");
+// const $column6 = $("<div>").addClass("column").attr("id", "column6");
+// const $column7 = $("<div>").addClass("column").attr("id", "column7");
 
 // < ---------- adding columns to gameboard ---------->
-$gameBoard.append($column1);
-$gameBoard.append($column2);
-$gameBoard.append($column3);
-$gameBoard.append($column4);
-$gameBoard.append($column5);
-$gameBoard.append($column6);
-$gameBoard.append($column7);
+// $gameBoard.append($column1);
+// $gameBoard.append($column2);
+// $gameBoard.append($column3);
+// $gameBoard.append($column4);
+// $gameBoard.append($column5);
+// $gameBoard.append($column6);
+// $gameBoard.append($column7);
 // < ---------- start game ---------->
 
 // < ---------- how to make game pieces fall to the bottom ---------->
