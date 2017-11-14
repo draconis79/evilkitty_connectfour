@@ -1,7 +1,45 @@
 console.log("connect four");
 
+
+const createBoard = () => {
+// create a column with 7 rows
+    const $row = $("<div>").addClass("row");
+    for (let i = 0; i < 6; i++) {
+// create 6 columns
+        const $column = $("<div>").addClass("column");
+              $column.attr("id", "column" + (i + 1));
+        for (let j = 0; j < 7; j++) {
+
+// create game slots
+            const $circle = $("<div>").addClass("circle");
+            $column.append($circle);
+        }
+        $row.append($column);
+    }
+    $(".container").append($row);
+}
+
+
+
+
+
+
+
+// < ---------- event listeners ---------->
+
+// setupEventListerners  = () => {
+//
+//   $circle.on("mouseenter", (event) => {
+//     console.log("here", "column");
+//   })
+// });
+
+
+
 $(()=> {
 
+createBoard();
+// setupEventListerners();
 // < ---------- variables ---------->
 
 // const player1;
@@ -14,44 +52,15 @@ $(()=> {
 // const button = 0;
 // const winner = 0;
 
-
+});
 // < ---------- create game board ---------->
 
-const createBoard = () => {
-// create a column with 7 rows
-    const $row = $("<div>").addClass("row");
-    for (let i = 0; i < 7; i++) {
-// create 6 columns
-        const $column = $("<div>").addClass("column");
-        for (let j = 0; j < 6; j++) {
-        $column.attr("column" + (i));
-// create game slots
-            const $circle = $("<div>").addClass("circle");
-            $column.append($circle);
-        }
-        $row.append($column);
-    }
-    $(".container").append($row);
-}
-
-
-
-createBoard();
-
-
-
-// < ---------- event listeners ---------->
-
-// setupEventListerners() {
-//   const $createBoard = $(createBoard);
-//
-//   $createBoard.on("mouseover", "column")
-// }
 
 
 
 
-});
+
+
 
 // < ---------- functions ---------->
 
