@@ -1,52 +1,87 @@
 console.log("connect four");
 
+let switchPlayer = 0;
+
+
 
 const createBoard = () => {
-// create a column with 7 rows
+    // create a column with 7 rows
     const $gameBoard = $("<div>").addClass("gameBoard");
     for (let i = 0; i < 6; i++) {
-// create 6 columns
-        const $column = $("<div>").addClass("column");
-              $column.attr("id", "column" + (i + 1));
+        // create 6 columns
+        const $row = $("<div>").addClass("column");
+        $row.attr("id", "row" + (i + 1));
+        $gameBoard.append($row);
         for (let j = 0; j < 7; j++) {
 
-// create game slots
+            // create game slots
             const $circle = $("<div>").addClass("circle");
             // setting up attribute for column to isolate column to do something.
-            $circle.attr("column",(i + 1));
-            $circle.attr("row", (j + 1));
-            $column.append($circle);
-            $gameBoard.append($column);
+            $circle.attr("row", (i + 1));
+            $circle.attr("column", (j + 1));
+            $row.append($circle);
+
         }
+    }
     $(".container").append($gameBoard);
+}
+
+// Adding a game piece on the board at the start of the game.
+// < ---------- event listeners ---------->
+$(() => {
+
+    const playGame = (event) => {
+        const $row = $(event.currentTarget).parent().attr("id");
+        console.log($row);
+
+    const $dropChip = $(`#${$row}`).contents();
+      console.log($dropChip);
+    for (let i = 0; i < $dropChip.length - 1; i--) {
+
+        // if ($switchPlayer === true) {
+        //     $dropChip(i).css("background-color", "darkmagenta") add class or id here
+        // } else if ($switchPlayer === false) {
+        //   $dropChip(i).css("background-color", "darkgrey") add class or id here
+        // }
+
+
+// loop through all rows from wherever they click to bottom
+// inside loop, check if next row has marker.
     }
 
 }
 
+createBoard();
+
+$(".circle").on("click", playGame);
 
 
-// < ---------- event listeners ---------->
-$(()=> {
 
-// const setupEventListeners  = (event) => {
+});
+
+
+
+//
+// // Once the game piece drops, toggle from player 1 to player 2.
+//
+
+//
+//
+// const playGame  = (event) => {
 //
 //   $createBoard.on("mouseenter", (event) => {
 //   })
 //
-// const lastEmptyCell {
-//       for (let i = cells.length - 1; i >= 0; i --) {
-//         const $cell = $(cells[i]);
-//         }
-//       }
-//       return null;
+//
 //     }
 
 
-
-createBoard();
 // setupEventListeners();
 
 // };
+//
+//
+
 // < ---------- variables ---------->
 
 // const player1;
@@ -59,13 +94,20 @@ createBoard();
 // const button = 0;
 // const winner = 0;
 
-});
+
 // < ---------- create game board ---------->
-
-
-
-
-
+// global variable that I will be able to use.
+// set this on start to true: player 1 turn
+// in click function, once click toggle.
+// if true, player 1 = false
+// if false, player 1 = true
+// if player1 , then add this color chip
+//
+//
+//
+// add the chip
+// go to a specific place
+// then toggle
 
 
 

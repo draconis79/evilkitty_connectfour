@@ -55,16 +55,14 @@ header, h1, h3 {
   border-radius: 40px;
 }
 
-.magenta {
+.magentaCircle {
 	background-color: darkmagenta;
-	background-size: cover;
-	border: 2px solid white;
+
 }
 
-.grey {
+.greyCircle {
 	background-color: darkgrey;
-	background-size: cover;
-	border: 2px solid white;
+
 
 }
 
