@@ -3,7 +3,7 @@ console.log("connect four");
 
 const createBoard = () => {
 // create a column with 7 rows
-    const $row = $("<div>").addClass("row");
+    const $gameBoard = $("<div>").addClass("gameBoard");
     for (let i = 0; i < 6; i++) {
 // create 6 columns
         const $column = $("<div>").addClass("column");
@@ -12,34 +12,41 @@ const createBoard = () => {
 
 // create game slots
             const $circle = $("<div>").addClass("circle");
+            // setting up attribute for column to isolate column to do something.
+            $circle.attr("column",(i + 1));
+            $circle.attr("row", (j + 1));
             $column.append($circle);
+            $gameBoard.append($column);
         }
-        $row.append($column);
+    $(".container").append($gameBoard);
     }
-    $(".container").append($row);
+
 }
 
 
 
-
-
-
-
 // < ---------- event listeners ---------->
-
-// setupEventListerners  = () => {
-//
-//   $circle.on("mouseenter", (event) => {
-//     console.log("here", "column");
-//   })
-// });
-
-
-
 $(()=> {
 
+// const setupEventListeners  = (event) => {
+//
+//   $createBoard.on("mouseenter", (event) => {
+//   })
+//
+// const lastEmptyCell {
+//       for (let i = cells.length - 1; i >= 0; i --) {
+//         const $cell = $(cells[i]);
+//         }
+//       }
+//       return null;
+//     }
+
+
+
 createBoard();
-// setupEventListerners();
+// setupEventListeners();
+
+// };
 // < ---------- variables ---------->
 
 // const player1;
