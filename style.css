@@ -13,42 +13,39 @@ header, h1, h3 {
   position: relative;
 }
 
-/*main {
-  margin: auto;
-  width: 100%;
-  position: relative;
-}*/
-
-/*#columnSelector {
-  padding: 0px 7px;
-  display: block;
-}*/
-
-.arrow {
-  width: 80px;
-  height: 50px;
-  display: inline-block;
-  margin: 0px 5px;
-}
-
 .container {
-  border: solid 1px black;
-  display: block;
+  background-color: solid 1px black;
+  display: inline-block;
   height: 100%;
   width: 100%;
 }
 
-.gameBoard {
-  border: solid 5px black;
-  display: inline-block;
+.row {
+  border: solid 3px black;
+
+  display: inline;
   width: 700px;
   height: 700px;
   margin: auto;
-  /*background-color: black;*/
-  /*opacity: 0.1;*/
+  background-color: black;
+  opacity: 0.1;
   vertical-align: top;
   border-radius: 40px;
   text-align: center;
+}
+
+.column {
+  width: 70px;
+  height: 70px;
+  display: inline-block;
+  background-color: white;
+  border-radius: 50%;
+  margin: 5px;
+  /*margin: auto;
+  vertical-align: top;
+  border-radius: 40px;
+  text-align: center;*/
+
 }
 
 .circle {
@@ -60,9 +57,22 @@ header, h1, h3 {
   vertical-align: top;
   border-radius: 40px;
 }
+/*
+.magenta {
+	background-color: darkmagenta;
+	background-size: cover;
+	border: 2px solid white;
+}
+
+.grey {
+	background-color: darkgrey;
+	background-size: cover;
+	border: 2px solid white;
+
+}*/
 
 #sidebar {
-  width: 260px;
+  width: 200px;
   margin: 5px 0px 0px 25px;
   display: inline-block;
   position: relative;
@@ -72,7 +82,12 @@ header, h1, h3 {
   margin: 40px auto;
 }
 
-
+/*.arrow {
+  width: 80px;
+  height: 50px;
+  display: inline-block;
+  margin: 0px 5px;
+}*/
 
 /*Previous errors*/
 

@@ -1,10 +1,14 @@
 console.log("connect four");
 
-$(()=>{
+$(()=> {
+
 // < ---------- variables ---------->
 
-// const player1 = 0;
-// const player2 = 0;
+// const player1;
+// const player1Color = darkmagenta
+// const player2;
+// const player2Color = darkgrey
+// const moves = 0;
 // const message = 0;
 // const startGame = 0;
 // const button = 0;
@@ -15,93 +19,55 @@ $(()=>{
 
 const createBoard = () => {
 // create a column with 7 rows
-    const $gameBoard = $("<div>").addClass("gameBoard");
+    const $row = $("<div>").addClass("row");
     for (let i = 0; i < 7; i++) {
 // create 6 columns
-        const $columnSelector = $("<div>").addClass("columnSelector");
-        $columnSelector.attr("columnSelector" + (i));
+        const $column = $("<div>").addClass("column");
         for (let j = 0; j < 6; j++) {
+        $column.attr("column" + (i));
 // create game slots
             const $circle = $("<div>").addClass("circle");
-            $columnSelector.append($circle);
+            $column.append($circle);
         }
-        $gameBoard.append($columnSelector);
+        $row.append($column);
     }
-    $(".container").append($gameBoard);
+    $(".container").append($row);
 }
 
-
-
-
-
-// const $circle = $("<div>").addClass("circle");
-//
-// $($container).append($column);
-//
-// const addCircle = (event) => {
-//
-// const $shape = $(event.currentTarget);
-//                 //shape here is a placeholder. need something here to change it to a circle.
-// $shape.attr("class", "circle");
-//
-//   };
-
-//event listeners
-
-//   $(".circle").on("click", addCircle)
-// };
-//
-// };
-
-
-
-// < ---------- create rows ---------->
-
-
-
-
-
-
-// < ---------- create columns ---------->
-
-
-// const $column1 = $("<div>").addClass("column").attr("id", "column1");
-// const $column2 = $("<div>").addClass("column").attr("id", "column2");
-// const $column3 = $("<div>").addClass("column").attr("id", "column3");
-// const $column4 = $("<div>").addClass("column").attr("id", "column4");
-// const $column5 = $("<div>").addClass("column").attr("id", "column5");
-// const $column6 = $("<div>").addClass("column").attr("id", "column6");
-// const $column7 = $("<div>").addClass("column").attr("id", "column7");
-
-// < ---------- adding columns to gameboard ---------->
-// $gameBoard.append($column1);
-// $gameBoard.append($column2);
-// $gameBoard.append($column3);
-// $gameBoard.append($column4);
-// $gameBoard.append($column5);
-// $gameBoard.append($column6);
-// $gameBoard.append($column7);
-
-
-// < ---------- functions ---------->
-
-// 1. start game
-// 2. seclect column
-// 3. Make game piece fall to bottom
-// 4. update board
-// 5. switch player
-// 6. determine winner
-// 7. restart game
 
 
 createBoard();
 
 
 
+// < ---------- event listeners ---------->
+
+// setupEventListerners() {
+//   const $createBoard = $(createBoard);
+//
+//   $createBoard.on("mouseover", "column")
+// }
+
 
 
 
 });
+
+// < ---------- functions ---------->
+
+// 1. start game, start gameboard
+// 2. show player color
+
+// 2. seclect column
+// 3. if column has space, add game piece to column
+// 3. Make game piece fall to bottom
+
+// 2. if column does not have space, show player color
+// 4. update board, see win/lose status
+// 6. if four in a row win, if not back to #2.
+// 5. switch player
+// 7. restart game
+
 // < ---------- start game ---------->
 
 // < ---------- how to make game pieces fall to the bottom ---------->
@@ -114,7 +80,7 @@ createBoard();
 
 // < ---------- how to determine winning state ---------->
 
-// < ---------- event listeners ---------->
+
 
 // < ---------- on-click events ---------->
 
