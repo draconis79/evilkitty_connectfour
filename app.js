@@ -1,13 +1,8 @@
 console.log("connect four");
 
-// let $switchPlayer = 0;
-
-
-
-
 
 // Adding a game piece on the board at the start of the game.
-// < ---------- event listeners ---------->
+
 $(() => {
 
   const createBoard = () => {
@@ -22,6 +17,7 @@ $(() => {
 
               // create game slots
               const $circle = $("<div>").addClass("circle");
+              $circle.addClass('empty');
               // setting up attribute for column to isolate column to do something.
               $circle.attr("row", (i + 1));
               $circle.attr("column", (j + 1));
@@ -67,9 +63,6 @@ $(() => {
 
 
 
-
-
-
     createBoard();
 
     // $(".circle").on("click", playGame);
@@ -85,47 +78,50 @@ $(() => {
         $(event.target).css("background-color", "darkmagenta").addClass('player1');
 
         magSlots++;
-        console.log('player1');
-        console.log($('.player1'));
+        // console.log('player1');
+        // console.log($('.player1'));
       } else {
         $(event.target).css("background-color", "darkgrey").addClass('player2');
 
         greySlots++;
-        console.log('player2');
-        console.log($('.player2'));
+        // console.log('player2');
+        // console.log($('.player2'));
       }
     }
 
-    $(".circle").on("click", () => {
-
-      addColor();
+    $(".circle").on("click", (event) => {
 
 
 
 
-          let c1EmptySlot = 6;
-          let c2EmptySlot = 6;
-          let c3EmptySlot = 6;
-          let c4EmptySlot = 6;
-          let c5EmptySlot = 6;
-          let c6EmptySlot = 6;
-          let c7EmptySlot = 6;
-
-      let columnNum = $(event.target).attr("column");
-        // console.log(columnNum + " this is columnNum");
-        // console.log("c" + columnNum + "EmptySlot");
-        // console.log("row" + "");
-
-      let counterVar = eval("c" + columnNum + "EmptySlot");
-      // console.log(counterVar);
-
-      // console.log("row" + counterVar + "column" + columnNum);
-
-      let bottomEmptySlot = ("row" + counterVar + "column" + columnNum);
-      console.log(bottomEmptySlot);
+      // let c1EmptySlot = 6;
+      // let c2EmptySlot = 6;
+      // let c3EmptySlot = 6;
+      // let c4EmptySlot = 6;
+      // let c5EmptySlot = 6;
+      // let c6EmptySlot = 6;
+      // let c7EmptySlot = 6;
+      //
+      // let columnNum = $(event.target).attr("column");
+      // let counterVar = eval("c" + columnNum + "EmptySlot");
+      // let bottomEmptySlot = ("row" + counterVar + "column" + columnNum);
+      // console.log(bottomEmptySlot);
+      // Maybe figure out how to decrement from afar?
       // eval(counterVar) -- ;
 
-    })
+      for (i = 6; i > 0; i--) {
+        let columnNum = $(event.target).attr("column");
+        let slotChecked = '#row' + i + 'column' + columnNum;
+        console.log(slotChecked);
+        if ($(slotChecked).hasClass('empty')) {
+          addColor();
+          $(slotChecked).removeClass('empty');
+          break;
+        }
+      }
+
+    });
+
 
 
 });
