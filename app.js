@@ -1,6 +1,6 @@
 console.log("connect four");
 
-let switchPlayer = 0;
+let $switchPlayer = 0;
 
 
 
@@ -9,7 +9,7 @@ const createBoard = () => {
     const $gameBoard = $("<div>").addClass("gameBoard");
     for (let i = 0; i < 6; i++) {
         // create 6 columns
-        const $row = $("<div>").addClass("column");
+        const $row = $("<div>").addClass("row");
         $row.attr("id", "row" + (i + 1));
         $gameBoard.append($row);
         for (let j = 0; j < 7; j++) {
@@ -19,6 +19,9 @@ const createBoard = () => {
             // setting up attribute for column to isolate column to do something.
             $circle.attr("row", (i + 1));
             $circle.attr("column", (j + 1));
+            $circle.attr("id", ("row" + (i + 1) + "column" + (j + 1)));
+            // .attr("data-column", column)
+            // .attr("data-row", row)
             $row.append($circle);
 
         }
@@ -32,34 +35,45 @@ $(() => {
 
     const playGame = (event) => {
         const $row = $(event.currentTarget).parent().attr("id");
-        console.log($row);
-
-    const $dropChip = $(`#${$row}`).contents();
-      console.log($dropChip);
-    for (let i = 0; i < $dropChip.length - 1; i--) {
-
-        // if ($switchPlayer === true) {
-        //     $dropChip(i).css("background-color", "darkmagenta") add class or id here
-        // } else if ($switchPlayer === false) {
-        //   $dropChip(i).css("background-color", "darkgrey") add class or id here
-        // }
 
 
-// loop through all rows from wherever they click to bottom
-// inside loop, check if next row has marker.
+        const $dropChip = $(`#${$row}`).contents();
+        console.log($dropChip);
+        for (let i = $dropChip.length - 1; i >= 0; i--) {
+            const $circle = $dropChip.eq(i);
+
+            // if (!$dropChip.eq(i).attr("value")) {
+            //     if ($switchPlayer === true) {
+            //         $dropChip.eq(i).css("background-color", "darkmagenta")
+            //     } else if ($switchPlayer === false) {
+            //         $dropChip.eq(i).css("background-color", "darkgrey")
+            //     }
+            // }
+
+
+        }
+        const inputRed = (event) => {
+            let player1 = $(event.currentTarget).css('background-color', "darkmagenta");
+            console.log(player1);
+
+
+        }
+        $dropChip.on("click", inputRed);
     }
 
-}
 
-createBoard();
 
-$(".circle").on("click", playGame);
 
+    createBoard();
+
+    $(".circle").on("click", playGame);
 
 
 });
+// });
 
-
+// loop through all rows from wherever they click to bottom
+// inside loop, check if next row has marker.
 
 //
 // // Once the game piece drops, toggle from player 1 to player 2.
