@@ -1,46 +1,49 @@
 console.log("connect four");
 
-let $switchPlayer = 0;
+// let $switchPlayer = 0;
 
 
 
-const createBoard = () => {
-    // create a column with 7 rows
-    const $gameBoard = $("<div>").addClass("gameBoard");
-    for (let i = 0; i < 6; i++) {
-        // create 6 columns
-        const $row = $("<div>").addClass("row");
-        $row.attr("id", "row" + (i + 1));
-        $gameBoard.append($row);
-        for (let j = 0; j < 7; j++) {
 
-            // create game slots
-            const $circle = $("<div>").addClass("circle");
-            // setting up attribute for column to isolate column to do something.
-            $circle.attr("row", (i + 1));
-            $circle.attr("column", (j + 1));
-            $circle.attr("id", ("row" + (i + 1) + "column" + (j + 1)));
-            // .attr("data-column", column)
-            // .attr("data-row", row)
-            $row.append($circle);
-
-        }
-    }
-    $(".container").append($gameBoard);
-}
 
 // Adding a game piece on the board at the start of the game.
 // < ---------- event listeners ---------->
 $(() => {
 
-    const playGame = (event) => {
-        const $row = $(event.currentTarget).parent().attr("id");
+  const createBoard = () => {
+      // create a column with 7 rows
+      const $gameBoard = $("<div>").addClass("gameBoard");
+      for (let i = 0; i < 6; i++) {
+          // create 6 columns
+          const $row = $("<div>").addClass("row");
+          $row.attr("id", "row" + (i + 1));
+          $gameBoard.append($row);
+          for (let j = 0; j < 7; j++) {
+
+              // create game slots
+              const $circle = $("<div>").addClass("circle");
+              // setting up attribute for column to isolate column to do something.
+              $circle.attr("row", (i + 1));
+              $circle.attr("column", (j + 1));
+              $circle.attr("id", ("row" + (i + 1) + "column" + (j + 1)));
+              // .attr("data-column", column)
+              // .attr("data-row", row)
+              $row.append($circle);
+
+          }
+      }
+      $(".container").append($gameBoard);
+  }
 
 
-        const $dropChip = $(`#${$row}`).contents();
-        console.log($dropChip);
-        for (let i = $dropChip.length - 1; i >= 0; i--) {
-            const $circle = $dropChip.eq(i);
+    // const playGame = (event) => {
+    //     const $row = $(event.currentTarget).parent().attr("id");
+    //
+    //
+    //     const $dropChip = $(`#${$row}`).contents();
+    //     // console.log($dropChip);
+    //     for (let i = $dropChip.length - 1; i >= 0; i--) {
+    //         const $circle = $dropChip.eq(i);
 
             // if (!$dropChip.eq(i).attr("value")) {
             //     if ($switchPlayer === true) {
@@ -50,23 +53,79 @@ $(() => {
             //     }
             // }
 
+        // }
+        // const inputRed = (event) => {
+        //     let player1 = $(event.currentTarget).css('background-color', "darkmagenta");
+        //     // console.log(player1);
+        //
+        //
+        // }
+        // $dropChip.on("click", inputRed);
 
-        }
-        const inputRed = (event) => {
-            let player1 = $(event.currentTarget).css('background-color', "darkmagenta");
-            console.log(player1);
+
+    // }
 
 
-        }
-        $dropChip.on("click", inputRed);
-    }
 
 
 
 
     createBoard();
 
-    $(".circle").on("click", playGame);
+    // $(".circle").on("click", playGame);
+
+
+
+    let magSlots = 0;
+    let greySlots = 0;
+
+
+    const addColor = () => {
+      if (magSlots <= greySlots) {
+        $(event.target).css("background-color", "darkmagenta").addClass('player1');
+
+        magSlots++;
+        console.log('player1');
+        console.log($('.player1'));
+      } else {
+        $(event.target).css("background-color", "darkgrey").addClass('player2');
+
+        greySlots++;
+        console.log('player2');
+        console.log($('.player2'));
+      }
+    }
+
+    $(".circle").on("click", () => {
+
+      addColor();
+
+
+
+
+          let c1EmptySlot = 6;
+          let c2EmptySlot = 6;
+          let c3EmptySlot = 6;
+          let c4EmptySlot = 6;
+          let c5EmptySlot = 6;
+          let c6EmptySlot = 6;
+          let c7EmptySlot = 6;
+
+      let columnNum = $(event.target).attr("column");
+        // console.log(columnNum + " this is columnNum");
+        // console.log("c" + columnNum + "EmptySlot");
+        // console.log("row" + "");
+
+      let counterVar = eval("c" + columnNum + "EmptySlot");
+      // console.log(counterVar);
+
+      // console.log("row" + counterVar + "column" + columnNum);
+
+      let bottomEmptySlot = ("row" + counterVar + "column" + columnNum);
+      console.log(bottomEmptySlot);
+      // eval(counterVar) -- ;
+
+    })
 
 
 });
