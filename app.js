@@ -7,9 +7,10 @@ $(() => {
 
   const createBoard = () => {
       // create a column with 7 rows
+      // change camel case on id to class to sausage-case
       const $gameBoard = $("<div>").addClass("gameBoard");
       for (let i = 0; i < 6; i++) {
-          // create 6 columns
+          // create 6 rows
           const $row = $("<div>").addClass("row");
           $row.attr("id", "row" + (i + 1));
           $gameBoard.append($row);
@@ -22,8 +23,6 @@ $(() => {
               $circle.attr("row", (i + 1));
               $circle.attr("column", (j + 1));
               $circle.attr("id", ("row" + (i + 1) + "column" + (j + 1)));
-              // .attr("data-column", column)
-              // .attr("data-row", row)
               $row.append($circle);
 
           }
@@ -32,89 +31,50 @@ $(() => {
   }
 
 
-    // const playGame = (event) => {
-    //     const $row = $(event.currentTarget).parent().attr("id");
-    //
-    //
-    //     const $dropChip = $(`#${$row}`).contents();
-    //     // console.log($dropChip);
-    //     for (let i = $dropChip.length - 1; i >= 0; i--) {
-    //         const $circle = $dropChip.eq(i);
-
-            // if (!$dropChip.eq(i).attr("value")) {
-            //     if ($switchPlayer === true) {
-            //         $dropChip.eq(i).css("background-color", "darkmagenta")
-            //     } else if ($switchPlayer === false) {
-            //         $dropChip.eq(i).css("background-color", "darkgrey")
-            //     }
-            // }
-
-        // }
-        // const inputRed = (event) => {
-        //     let player1 = $(event.currentTarget).css('background-color', "darkmagenta");
-        //     // console.log(player1);
-        //
-        //
-        // }
-        // $dropChip.on("click", inputRed);
-
-
-    // }
-
 
 
     createBoard();
 
-    // $(".circle").on("click", playGame);
 
 
 
-    let magSlots = 0;
-    let greySlots = 0;
 
+    let numMagSlots = 0;
+    let numGreySlots = 0;
 
-    const addColor = () => {
-      if (magSlots <= greySlots) {
-        $(event.target).css("background-color", "darkmagenta").addClass('player1');
+// creating argument slotToColor, whenever addColor is called it will take this variable. parameter slotchecked
 
-        magSlots++;
+    const addColor = (slotChecked) => {
+      if (numMagSlots <= numGreySlots) {
+        $(slotChecked).css("background-color", "darkmagenta").addClass('player1');
+// increment number by 1 so that we know there's one more magenta slots, also adding a class.
+        numMagSlots++;
         // console.log('player1');
         // console.log($('.player1'));
+        // if there are more magenta slots than grey slots, then color slots we are checking to grey.
       } else {
-        $(event.target).css("background-color", "darkgrey").addClass('player2');
+        $(slotChecked).css("background-color", "darkgrey").addClass('player2');
 
-        greySlots++;
+        numGreySlots++;
         // console.log('player2');
         // console.log($('.player2'));
       }
     }
+// creating event listener to listen to click taht has the circle class. starts anonymous function that takes the argument event.
 
     $(".circle").on("click", (event) => {
-
-
-
-
-      // let c1EmptySlot = 6;
-      // let c2EmptySlot = 6;
-      // let c3EmptySlot = 6;
-      // let c4EmptySlot = 6;
-      // let c5EmptySlot = 6;
-      // let c6EmptySlot = 6;
-      // let c7EmptySlot = 6;
-      //
-      // let columnNum = $(event.target).attr("column");
-      // let counterVar = eval("c" + columnNum + "EmptySlot");
-      // let bottomEmptySlot = ("row" + counterVar + "column" + columnNum);
-      // console.log(bottomEmptySlot);
-      // Maybe figure out how to decrement from afar?
-      // eval(counterVar) -- ;
-
+// loop counts/checks backwards bottom up
       for (i = 6; i > 0; i--) {
+        // creating variable that pulls the number of the column from the column property, from the element that is clicked.
         let columnNum = $(event.target).attr("column");
+        // this creates and stores the ID of the slot that you are currently checking.
         let slotChecked = '#row' + i + 'column' + columnNum;
-        console.log(slotChecked);
+        // console.log(slotChecked);
+        // console.log($(slotChecked).hasClass('empty'));
+        // creating a condition that evaluates whether or not the slot currentlychecking has an empty class.
         if ($(slotChecked).hasClass('empty')) {
-          addColor();
+          // if slot is empty, it's sending the id of the slot to the addColor function to the appropriate color.
+          addColor(slotChecked);
           $(slotChecked).removeClass('empty');
           break;
         }
