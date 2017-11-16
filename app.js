@@ -58,16 +58,26 @@ $(() => {
             // break;
         }
     }
+// create 3 diff functions inside to check row, check column and check diagonal.
+
+// Once slot takes color, get player class of last colored slot.
+// Create a loop that counts consecutive player class-marked slots.
 
 
-    // check if there are 4 color slots that match up in rows and columns
-    // check circle next to where circle was clicked left, right, up, and down, if it's the same class, check again, until it reaches four of the same has class player 1 or player 2.
-    // everytime a game piece is clicked, check to see if player has connect four.
+// when a color is clicked, check for winner
+// determine color(player)
+
+// everytime a game piece is clicked, check to see if player has connect four.
+// check if there are 4 color slots that match up in rows and columns
+// check circle next to where circle was clicked left, right,
+// check circle to where it was clicked up, and down, if it's the same class,
+// if it reaches four of the same has class player 1 or player 2, you have a winner.
+
 
     // takes argument row and column
-    // const checkForWinner = (row, column) {
-    //   checkDirection(row);
-    //   checkDirection(column);
+    const checkForWinner = (row, column) {
+      checkDirection(row);
+      checkDirection(column);
       // lets say we click on row 2, column 2, we need to check in the direction up and down
 
 
@@ -145,8 +155,7 @@ $(() => {
       });
   }
 
-checkVerticals() || checkHorizontals() || checkDiagonalBottomLeftToTopRight() || checkDiagonalTopLeftToBottomRight();
-
+ return checkForWinner({ checkLeftRight() || checkUpDown() || checkDiagonalBottomLeftToTopRight() || checkDiagonalTopLeftToBottomRight()});
 
     //
     //
