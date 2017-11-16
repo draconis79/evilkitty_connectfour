@@ -1,5 +1,6 @@
 # Connect Four Game
 
+<br>
 
 ## How to Play
 
@@ -7,7 +8,7 @@ Connect Four is a two-player connection game. In the game, two players each choo
 
 <br>
 
-# Technologies Used
+## Technologies Used
 
 - HTML
 - CSS
@@ -17,7 +18,7 @@ Connect Four is a two-player connection game. In the game, two players each choo
 
 <br>
 
-# Technical Challenges
+## Technical Challenges
 
 - Creating the game board and figuring out how to pull numbers of the column from the column property
 - Isolating the columns and adding a game piece to the bottom of the board
@@ -25,7 +26,7 @@ Connect Four is a two-player connection game. In the game, two players each choo
 
 <br>
 
-# Future Improvements
+## Future Improvements
 
 - Adding diagonal win scenario
 - Build on the theme with CSS
@@ -35,13 +36,13 @@ Connect Four is a two-player connection game. In the game, two players each choo
 
 <br>
 
-# Author
+## Author
 
 - Mandy Tong
 - [Play Here](https://draconis79.github.io/evilkitty_connectfour/)
 
 <br>
 
-# Acknowledgments
+## Acknowledgments
 
 Thank you to my WDIR spaceghost classmates, TAs, and instructors. Special thanks to Anthony, GG, Tyler, Vernon, Cathleen, and Karolin. This game is playable because of your help.
