@@ -3,6 +3,7 @@ body {
   font-family: 'Space Mono', monospace;
   background-repeat: no-repeat;
   background-size: cover;
+  text-align: center;
 }
 
 header, h1, h3 {
@@ -20,6 +21,7 @@ header, h1, h3 {
   width: 100%;
   display: flex;
   flex-direction: column;
+  margin: auto;
 }
 
 .row {
@@ -64,62 +66,4 @@ header, h1, h3 {
 .greyCircle {
 	background-color: darkgrey;
 
-
 }
-
-/*#sidebar {
-  width: 200px;
-  margin: 5px 0px 0px 25px;
-  display: inline-block;
-  position: relative;
-}
-
-#instructions {
-  margin: 40px auto;
-}*/
-
-.arrow {
-  width: 80px;
-  height: 50px;
-  display: inline-block;
-  margin: 0px 5px;
-}
-
-
-/*Previous errors
-
-container {
-  border: 1px solid darkgoldenrod;
-  width: 550px;
-  height: 400px;
-  margin: 0 auto;
-  padding-top: 100px;
-  border-radius: 50px;
-  margin-top: 5px;
-  text-align: center;
-  position: fixed;
-}
-
-.gameBoard {
-  border: 1px solid darkgray;
-  width: 800px;
-  height: 650px;
-  margin: auto;
-}
-
-.row {
-  display: inline-block;
-}
-
-
-.column {
-  display: inline-block;
-}
-
-.circle {
-  height: 60px;
-	width: 60px;
-  border: 1px solid black;
-	display: inline-block;
-  border-radius: 100%;
-}*/
