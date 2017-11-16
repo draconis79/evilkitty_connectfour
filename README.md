@@ -7,7 +7,6 @@
 Connect Four is a two-player connection game. In the game, two players each choose a color and take turns dropping a game piece on a 7 x 6 board through a selected column. The game piece will occupy the next available space in the column. To win the game, the player needs to connect four of their own color game piece in a row horizontally, vertically or diagonally before their opponent does.
 
 <br>
-<hr>
 
 # Technologies Used
 
@@ -18,7 +17,6 @@ Connect Four is a two-player connection game. In the game, two players each choo
 - Atom for text-editing
 
 <br>
-<hr>
 
 # Technical Challenges
 
@@ -28,7 +26,6 @@ Connect Four is a two-player connection game. In the game, two players each choo
 
 
 <br>
-<hr>
 
 # Future Improvements
 
@@ -39,15 +36,13 @@ Connect Four is a two-player connection game. In the game, two players each choo
 - Adding buttons to include start and restart game
 
 <br>
-<hr>
 
-# Author:
+# Author
 
-Mandy Tong
-Play [Here,](https://draconis79.github.io/evilkitty_connectfour/)
+- Mandy Tong
+- [Play Here](https://draconis79.github.io/evilkitty_connectfour/)
 
 <br>
-<hr>
 
 # Acknowledgments
 
